@@ -1,0 +1,52 @@
+{% extends 'main/layout.html' %}  <!-- Укажите ваш базовый шаблон -->
+
+{% block title %}Создать новый заказ{% endblock %}
+
+{% block content %}
+    <h1>Создать новый заказ</h1>
+    <form method="post">
+        {% csrf_token %} 
+        
+        <!-- Отображение поля "Номер стола" -->
+        <div class="form-group">
+            <label for="{{ form.table_number.id_for_label }}">Номер стола:</label>
+            {{ form.table_number }}
+            {% if form.table_number.errors %}
+                <div class="alert alert-danger">
+                    {{ form.table_number.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Отображение поля "Блюда" -->
+        <div class="form-group">
+            <label for="{{ form.items.id_for_label }}">Блюда:</label>
+            {{ form.items }}
+            <small class="form-text text-muted">
+                Нажмите Ctrl (или Cmd на Mac), чтобы выбрать несколько блюд.
+            </small>
+            {% if form.items.errors %}
+                <div class="alert alert-danger">
+                    {{ form.items.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Отображение поля "Статус" -->
+        <div class="form-group">
+            <label for="{{ form.status.id_for_label }}">Статус:</label>
+            {{ form.status }}
+            {% if form.status.errors %}
+                <div class="alert alert-danger">
+                    {{ form.status.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Кнопка для отправки формы -->
+        <div class="button-container">
+            <button class="btn btn-success" type="submit">Сохранить заказ</button>
+            <a href="{% url 'orders' %}" class="btn btn-secondary">Отмена</a>
+        </div>
+    </form>
+{% endblock %}

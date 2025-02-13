@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Удаление заказа{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Удаление заказа</h1><br>
+    
+    <!-- Информация о заказе -->
+    <div class="order-info">
+        <h3>Заказ #{{ object.id }}</h3>
+        <p><strong>Стол №:</strong> {{ object.table_number }}</p>
+        <p><strong>Статус:</strong> {{ object.get_status_display }}</p>
+        <p><strong>Блюда:</strong></p>
+        <ul>
+            {% for dish in object.items.all %}
+                <li>{{ dish.title }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Общая стоимость:</strong> {{ object.total_price }}</p>
+    </div>
+
+    <!-- Форма для подтверждения удаления -->
+    <form method="post" class="quest">
+        {% csrf_token %}
+        <p>Вы уверены, что хотите удалить этот заказ?</p>
+        <button class="btn btn-danger" type="submit">Удалить заказ</button>
+        <a href="{% url 'orders' %}" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+{% endblock %}

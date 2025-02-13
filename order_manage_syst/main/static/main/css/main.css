@@ -1,0 +1,179 @@
+body {
+    background: wheat;
+}
+
+html, body {
+    height: 100%; /* Устанавливаем высоту для всей страницы */
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+aside {
+    float: left;
+    width: 15%;
+    height: 100%;
+    padding: 1%;
+    border-right: 5px solid rosybrown;
+}
+
+aside img {
+    width: 80px;
+    float: left;
+}
+
+aside .logo {
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: -6px;
+}
+
+aside h3 {
+    margin-top: 50 px;
+    font-size: 30 px;
+}
+
+aside ul { list-style: none; }
+
+aside ul li {
+    color: black;
+    display: block;
+    margin-top: 20 px;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+aside a {
+    text-decoration: none;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: lightskyblue;
+    transform: scale(1.05);
+}
+
+.dish {
+    background: white; /* Фон блока */
+    border: 1px solid rosybrown; /* Граница блока */
+    border-radius: 10px; /* Закругленные углы */
+    padding: 15px; /* Внутренние отступы */
+    margin: 10px 0; /* Внешние отступы сверху и снизу */
+    margin-left: 20%; /* Отступ слева */
+    width: 40%; /* Ширина блока */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для блока */
+}
+
+h1 {
+    margin-left: 30%;
+}
+
+.dish h3 {
+    margin-top: 0; /* Убираем отступ сверху у заголовка */
+    color: rosybrown; /* Цвет заголовка */
+}
+
+.dish p {
+    margin-bottom: 0; /* Убираем отступ снизу у текста */
+}
+
+.btn-warning {
+    margin-left: 5%;
+}
+
+.form-group {
+    margin: 0 auto; /* Центрируем форму по горизонтали */
+    padding: 10px;
+    width: 500px;
+}
+
+.btn-success {
+    margin-left: 30%;
+}
+
+.av_el {
+    color: green; /* Задаёт зелёный цвет текста */
+    font-weight: bold; /* Делает текст жирным */
+    font-size: 16px; /* Задаёт размер шрифта */
+    text-transform: uppercase; /* Преобразует текст в верхний регистр */
+}
+
+.notav_el {
+    color: darkred; /* Задаёт зелёный цвет текста */
+    font-weight: bold; /* Делает текст жирным */
+    font-size: 16px; /* Задаёт размер шрифта */
+    text-transform: uppercase; /* Преобразует текст в верхний регистр */
+}
+
+.order {
+    background: white; /* Фон блока */
+    border: 1px solid rosybrown; /* Граница блока */
+    border-radius: 10px; /* Закругленные углы */
+    padding: 15px; /* Внутренние отступы */
+    margin: 10px 0; /* Внешние отступы сверху и снизу */
+    margin-left: 20%; /* Отступ слева */
+    width: 40%; /* Ширина блока */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для блока */
+}
+
+.status {
+    font-size: 25px;
+}
+
+.dish_in_ord {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.2;
+    padding-bottom: 5px; /* Добавляем отступ снизу для разделителя */
+    border-bottom: 1px solid #eee; /* Добавляем тонкую линию между блюдами */
+}
+
+/* Убираем границу у последнего блюда */
+.dish_in_ord:last-child {
+    border-bottom: none;
+}
+
+/* Убираем отступ слева у кнопки "Отменить" */
+.btn-secondary {
+    margin-left: 0; /* Убираем отступ */
+}
+
+/* Стили для контейнера кнопок */
+.button-container {
+    display: flex; /* Размещаем кнопки в одной строке */
+    gap: 10px; /* Расстояние между кнопками */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.order-info {
+    background: white; /* Фон блока */
+    border: 1px solid rosybrown; /* Граница блока */
+    border-radius: 10px; /* Закругленные углы */
+    padding: 15px; /* Внутренние отступы */
+    margin: 10px 0; /* Внешние отступы сверху и снизу */
+    margin-left: 20%; /* Отступ слева */
+    width: 40%; /* Ширина блока */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для блока */
+}
+
+.quest {
+    margin-left: 20%;
+}
+
+.form-group {
+    margin-left: 20%;
+}
+
+.ohno {
+    margin-left: 20%;
+    margin-left: 20%;
+}
+
+.col {
+    margin-top: 5px;
+}
+
+.itog {
+    margin-left: 20%;
+}

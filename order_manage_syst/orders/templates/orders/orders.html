@@ -1,0 +1,46 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <h1>Заказы</h1>
+
+    <!-- Форма для фильтрации -->
+    <form method="get" action="{% url 'orders' %}" class="form-group">
+        <div class="form-row">
+            <div class="col">
+                <input class="form-control" type="number" name="table_number" placeholder="Номер стола" value="{{ request.GET.table_number }}">
+            </div>
+            <div class="col">
+                <select class="form-control" name="status">
+                    <option value="">Все статусы</option>
+                    <option value="pending" {% if request.GET.status == "pending" %}selected{% endif %}>В ожидании</option>
+                    <option value="ready" {% if request.GET.status == "ready" %}selected{% endif %}>Готово</option>
+                    <option value="paid" {% if request.GET.status == "paid" %}selected{% endif %}>Оплачено</option>
+                </select>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-outline-dark">Поиск</button>
+            </div>
+        </div>
+    </form>
+
+    <a href="{% url 'add_order' %}" class="btn btn-warning">Добавить заказ</a>
+
+    {% if orders %}
+        {% for el in orders %}
+            <div class="order">
+                <h3>Стол №{{ el.table_number }}</h3>
+                <h3 class="status">Статус: {{ el.get_status_display }}</h3>
+                {% for dish in el.items.all %}
+                    <p class="dish_in_ord">{{ dish.title }}</p>
+                {% endfor %}
+                <h3>Итоговая сумма: {{ el.total_price }}р</h3>
+                <a href="{% url 'order-update' el.id %}" class="btn btn-info">Изменить</a>
+                <a href="{% url 'order-delete' el.id %}" class="btn btn-danger">Удалить</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="ohno">У вас нет записей!</p>
+    {% endif %}
+{% endblock %}
