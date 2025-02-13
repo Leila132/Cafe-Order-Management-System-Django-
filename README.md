@@ -68,14 +68,24 @@ Python 3.9
 ## API
 
 `GET /api/dishs/` Получить список всех блюд 
+
 `POST /api/dishs/` Создать новое блюдо 
+
 `GET /api/dish/1/` Получить информацию о блюде с ID=1 
+
 `PUT /api/dish/1/` Полностью обновить блюдо с ID=1 
+
 `PATCH /api/dish/1/` Частично обновить блюдо с ID=1 
 
+
 `GET /api/orders/` Получить список всех заказов 
+
 `POST /api/orders/` Создать новый заказ 
+
 `GET /api/orders/1/` Получить информацию о заказе с ID=1 
+
 `PUT /api/orders/1/` Полностью обновить заказ с ID=1 
+
 `PATCH /api/orders/1/` Частично обновить заказ с ID=1 
+
 `DELETE /api/orders/1/` Удалить заказ с ID=1 
